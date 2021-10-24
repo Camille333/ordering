@@ -12,5 +12,7 @@
     <string name="plspsw">请输入密码</string>
     <string name="reg">注册</string>
     <string name="user_reg">用户注册</string>
+    <string name="seecart">seecart</string>
+    <string name="totalPrice">总金额</string>
 
 </resources>

@@ -88,10 +88,10 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         ArrayList<User> list = new ArrayList<User>();
         @SuppressLint("Recycle") Cursor cursor = db.query("user",null,null,null,null,null,"name DESC");
         while(cursor.moveToNext()){
-            String name = cursor.getString(cursor.getColumnIndex("name"));
-            String email = cursor.getString(cursor.getColumnIndex("email"));
-            String phonenum = cursor.getString(cursor.getColumnIndex("phonenum"));
-            String password = cursor.getString(cursor.getColumnIndex("password"));
+            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("name"));
+            @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("email"));
+            @SuppressLint("Range") String phonenum = cursor.getString(cursor.getColumnIndex("phonenum"));
+            @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("password"));
 
             list.add(new User(name,password,email,phonenum));
         }
