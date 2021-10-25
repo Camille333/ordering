@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@drawable/round_border"
+        android:background="@color/powderblue"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/storeName"
-            android:layout_width="134dp"
-            android:layout_height="29dp"
+            android:layout_width="137dp"
+            android:layout_height="40dp"
             android:layout_marginBottom="6dp"
             android:gravity="center"
             android:textSize="30dp"
@@ -28,13 +28,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="美味面馆" />
 
         <TextView
             android:id="@+id/storeAddress"
             android:layout_width="253dp"
             android:layout_height="21dp"
             android:gravity="center"
+            android:text="温江区柳浪湾7号路"
             android:textSize="15dp"
             app:layout_constraintBottom_toTopOf="@+id/foods"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,8 +47,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/foods"
-            android:layout_width="396dp"
-            android:layout_height="398dp"
+            android:layout_width="387dp"
+            android:layout_height="475dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

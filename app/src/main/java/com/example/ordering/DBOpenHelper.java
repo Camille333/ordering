@@ -1,12 +1,15 @@
 package com.example.ordering;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
     /**
@@ -36,6 +39,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
      * 所以就有onCreate()、onUpgrade()两个方法
      *
      */
+
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("CREATE TABLE IF NOT EXISTS user(" +
@@ -45,12 +49,23 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "email TEXT," +
                 "phonenum TEXT)"
         );
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS food(" +
+                "food_name TEXT PRIMARY KEY AUTOINCREMENT," +
+                "food_price FLOAT)"
+        );
     }
+
+
     //版本适应
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS user");
         onCreate(db);
+
+        db.execSQL("DROP TABLE IF EXISTS food");
+        onCreate(db);
+
     }
     /**
      * 接下来写自定义的增删改查方法
@@ -60,9 +75,27 @@ public class DBOpenHelper extends SQLiteOpenHelper {
      * update()
      * getAllData()
      */
+
+    public void add_food(List<Food> list){
+        //向list列表里添加所有食物的名字以及对应的价格
+        list.add(0, new Food("香辣牛肉面", 15.0f, 0));
+        list.add(1, new Food("香辣牛肉面", 15.0f, 0));
+        list.add(2, new Food("香辣牛肉面", 15.0f, 0));
+        list.add(3, new Food("香辣牛肉面", 15.0f, 0));
+        list.add(4, new Food("香辣牛肉面", 15.0f, 0));
+
+        //将list列表的每行元素逐次插入数据表food中
+        for (Food item : list) {
+            db.execSQL("INSERT INTO food (food_name, food_price) VALUES(?,?)"
+                    , new Object[]{item.getFood_name(), item.getFood_price()});
+        }
+        db.close();
+    }
+
     void add(String name, String password,String email,String phonenum){
         db.execSQL("INSERT INTO user (name,password,email,phonenum) VALUES(?,?,?,?)",new Object[]{name,password,email,phonenum});
     }
+
     public void delete(String name,String password){
         db.execSQL("DELETE FROM user WHERE name = AND password ="+name+password);
     }
@@ -97,5 +130,17 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+/*
+    //读取数据
+    Cursor c = db.rawQuery("SELECT* FROM food", new String[]{"33"});
+        while (c.moveToNext()) {
+        int _id = c.getInt(c.getColumnIndex("_id"));
+        String name = c.getString(c.getColumnIndex("name"));
+        int age = c.getInt(c.getColumnIndex("age"));
+        Log.i("db", "_id=>" + _id + ", name=>" + name + ", age=>" + age);
+    }
+
+ */
+
 }
 

@@ -1,18 +1,26 @@
 package com.example.ordering;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.math.BigDecimal;
 
-public class Food {
+public class Food implements Parcelable {
     private String food_name;
-    private BigDecimal food_price;
+    private float food_price;
     private int food_count;
-    private byte[] food_image;
 
-    public BigDecimal getFood_price() {
+    public Food(String food_name, float food_price, int food_count) {
+        this.food_name = food_name;
+        this.food_price = food_price;
+        this.food_count = food_count;
+    }
+
+    public float getFood_price() {
         return food_price;
     }
 
-    public void setFood_price(BigDecimal food_price) {
+    public void setFood_price(float food_price) {
         this.food_price = food_price;
     }
 
@@ -32,11 +40,27 @@ public class Food {
         this.food_name = food_name;
     }
 
-    public byte[] getFood_image() {
-        return food_image;
+    public static final Creator<Food> CREATOR = new Creator<Food>() {
+        @Override
+        public Food createFromParcel(Parcel parcel) {
+            return new Food(parcel.readString(), parcel.readFloat(), parcel.readInt());
+        }
+
+        @Override
+        public Food[] newArray(int i) {
+            return new Food[i];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setFood_image(byte[] food_image) {
-        this.food_image = food_image;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(food_name);
+        parcel.writeFloat(food_price);
+        parcel.writeInt(food_count);
     }
 }

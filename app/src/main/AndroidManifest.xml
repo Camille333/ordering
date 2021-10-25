@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ordering">
         <activity
+            android:name=".PaymentActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:exported="true" />
+        <activity
             android:name=".SelectFoodActivity"
             android:exported="true" />
         <activity
