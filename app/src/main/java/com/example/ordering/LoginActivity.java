@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 try {
                                     sleep(2000);//2秒 模拟登录时间
                                     String user_name = userName;
-                                    Intent intent1 = new Intent(LoginActivity.this, SelectFoodActivity.class);//设置自己跳转到成功的界面
+                                    Intent intent1 = new Intent(LoginActivity.this, StoreActivity.class);//设置自己跳转到成功的界面
 
                                     //intent1.putExtra("user_name",user_name);
                                     startActivity(intent1);

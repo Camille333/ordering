@@ -45,7 +45,7 @@ public class PaymentActivity extends AppCompatActivity {
         //获取订单数据
         Intent intent = getIntent();
         total = intent.getFloatExtra("total",0.0f);
-        totalPrice.setText(String.format("%.2f", total) + "元");
+        totalPrice.setText("总金额为：" + String.format("%.2f", total) + "元");
 
         selectedFoods = getIntent().<Food>getParcelableArrayListExtra("list");
         Log.i(TAG, selectedFoods.get(0).getFood_name());

@@ -170,7 +170,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_border"
         android:text="@string/reg"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,31 +19,17 @@
 
         <TextView
             android:id="@+id/storeName"
-            android:layout_width="137dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="6dp"
-            android:gravity="center"
-            android:textSize="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/storeAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="美味面馆" />
-
-        <TextView
-            android:id="@+id/storeAddress"
             android:layout_width="253dp"
             android:layout_height="21dp"
+            android:layout_marginTop="28dp"
             android:gravity="center"
-            android:text="温江区柳浪湾7号路"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/foods"
+            android:text="美好面馆"
+            android:textColor="@color/black"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.535"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.854" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/foods"
@@ -57,8 +43,8 @@
 
         <ImageButton
             android:id="@+id/back"
-            android:layout_width="43dp"
-            android:layout_height="35dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="#00000000"

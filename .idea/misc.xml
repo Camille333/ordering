@@ -12,8 +12,10 @@
         <entry key="..\:/ordering/app/src/main/res/layout/activity_payment.xml" value="0.14666666666666667" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_select_food.xml" value="0.14666666666666667" />
+        <entry key="..\:/ordering/app/src/main/res/layout/activity_store.xml" value="0.14666666666666667" />
         <entry key="..\:/ordering/app/src/main/res/layout/bottom_sheet.xml" value="0.17916666666666667" />
         <entry key="..\:/ordering/app/src/main/res/layout/food_item.xml" value="0.22" />
+        <entry key="..\:/ordering/app/src/main/res/layout/item_listview.xml" value="0.22" />
       </map>
     </option>
   </component>

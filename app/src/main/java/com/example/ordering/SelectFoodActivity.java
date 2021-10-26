@@ -40,6 +40,7 @@ public class SelectFoodActivity extends AppCompatActivity implements Runnable{
     public static final String TAG = "SelectFoodActivity";
     private RecyclerView foodsListView;
     private BottomSheetDialog bottomSheetDialog;
+    private TextView storeName;
     private ImageButton back;
     private FloatingActionButton check;
     Handler handler;
@@ -51,16 +52,65 @@ public class SelectFoodActivity extends AppCompatActivity implements Runnable{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_food);
-
+        storeName = findViewById(R.id.storeName);
         foodsListView = findViewById(R.id.foods);
         foodsListView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         foodsListView.setAdapter(new MyFoodsAdapter(foods));
 
-        foods.add(0, new Food("香辣牛肉面", 15.0f, 0));
-        foods.add(1, new Food("红烧牛肉面", 13.2f, 0));
-        foods.add(2, new Food("牛杂粉丝", 14.5f, 0));
-        foods.add(3, new Food("杂酱面", 12.0f, 0));
-        foods.add(4, new Food("酸辣螺蛳粉", 16.5f, 0));
+        //获取所选商家名字数据
+        Intent intent = getIntent();
+        storeName.setText(intent.getStringExtra("store_name"));
+
+        //向食物列表foods里添加所有食物的名字、价格以及对应的数量
+        String s_flag = intent.getStringExtra("store_name");
+        switch (s_flag) {
+            case "美好面馆":
+                foods.add(0, new Food("香辣牛肉面", 15.0f, 0));
+                foods.add(1, new Food("红烧牛肉面", 13.2f, 0));
+                foods.add(2, new Food("牛杂粉丝", 14.5f, 0));
+                foods.add(3, new Food("杂酱面", 12.0f, 0));
+                foods.add(4, new Food("酸辣螺蛳粉", 16.5f, 0));
+                break;
+            case "书亦烧仙草":
+                foods.add(0, new Food("杨枝甘露烧仙草", 15.0f, 0));
+                foods.add(1, new Food("焦糖珍珠奶茶", 11.5f, 0));
+                foods.add(2, new Food("红豆燕麦奶茶", 12.0f, 0));
+                foods.add(3, new Food("芒椰芋泥绵绵", 14.5f, 0));
+                foods.add(4, new Food("芝士多肉葡萄", 16.3f, 0));
+                foods.add(5, new Food("桂花酒酿草莓", 13.4f, 0));
+                break;
+            case "三米粥铺":
+                foods.add(0, new Food("皮蛋瘦肉粥", 7.9f, 0));
+                foods.add(1, new Food("红枣山药粥", 9.9f, 0));
+                foods.add(2, new Food("腊八粥", 11.8f, 0));
+                foods.add(3, new Food("猪肉酸菜粉丝包", 4.5f, 0));
+                foods.add(4, new Food("红糖锅盔", 3.0f, 0));
+                foods.add(5, new Food("炼乳馒头", 6.3f, 0));
+                break;
+            case "叫了只炸鸡":
+                foods.add(0, new Food("韩式无骨炸鸡", 28.58f, 0));
+                foods.add(1, new Food("豪华辣翅套餐", 34.68f, 0));
+                foods.add(2, new Food("奥尔良烤翅", 8.88f, 0));
+                foods.add(3, new Food("蟹角棒", 4.2f, 0));
+                foods.add(4, new Food("爆浆鸡腿卷", 6.85f, 0));
+                foods.add(5, new Food("千丝万缕虾", 5.68f, 0));
+                break;
+            case "五谷渔粉":
+                foods.add(0, new Food("五谷肥牛粉", 14.0f, 0));
+                foods.add(1, new Food("五谷酥肉粉", 13.0f, 0));
+                foods.add(2, new Food("酸辣渔粉", 14.5f, 0));
+                foods.add(3, new Food("经典酸菜渔粉", 12.0f, 0));
+                foods.add(4, new Food("五谷鱼头渔粉", 13.8f, 0));
+                foods.add(5, new Food("五谷茄汁渔粉", 12.9f, 0));
+                break;
+            case "一品麻辣香锅":
+                foods.add(0, new Food("干锅鸡+虾饺套餐", 15.0f, 0));
+                foods.add(1, new Food("干锅兔套餐", 13.2f, 0));
+                foods.add(2, new Food("干锅牛蛙套餐", 14.5f, 0));
+                foods.add(3, new Food("干锅虾套餐", 12.0f, 0));
+                foods.add(4, new Food("素菜双拼套餐", 16.5f, 0));
+                break;
+        }
         Log.i(TAG, String.valueOf(foods.get(0)));
 
         //实现底部弹出所有选中食物的清单
@@ -84,27 +134,10 @@ public class SelectFoodActivity extends AppCompatActivity implements Runnable{
 
                 Intent intent = new Intent(SelectFoodActivity.this, PaymentActivity.class);
                 intent.putExtra("total", total);
-                /*
-                String[] name = new String[50];
-                float[] price = new float[50];
-                int[] count = new int[50];
-                int i = 0;
-                for (Food item : selectedFoods){
-                    name[i] = item.getFood_name();
-                    price[i] = item.getFood_price();
-                    count[i] = item.getFood_count();
-                    i = i + 1;
-                }
-                */
+
                 //实现将list列表传送到另一个页面
                 intent.putParcelableArrayListExtra("list", (ArrayList<? extends Parcelable>) selectedFoods);
-               /*
-                intent.putExtra("selected_foodname", name);
-                intent.putExtra("selected_foodprice", price);
-                intent.putExtra("selected_foodcount", count);
 
-                */
-                //Log.i(TAG, "选择的菜品名字为：" + name);
                 startActivity(intent);
             }
         });
@@ -113,7 +146,7 @@ public class SelectFoodActivity extends AppCompatActivity implements Runnable{
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SelectFoodActivity.this, MainActivity.class);
+                Intent intent = new Intent(SelectFoodActivity.this, StoreActivity.class);
                 startActivity(intent);
                 finish();
             }
