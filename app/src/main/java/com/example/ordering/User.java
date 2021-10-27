@@ -1,13 +1,10 @@
 package com.example.ordering;
 
-/**
- * Created by kizai 2020/05/19
- */
 public class User {
     private String name;            //用户名
     private String password;        //密码
-    private String email;        //邮箱
-    private String phonenum;        //手机号码
+    private String email;           //邮箱
+    private String phonenum;        //手机号
 
     User(String name, String password, String email, String phonenum) {
         this.name = name;
@@ -15,7 +12,6 @@ public class User {
         this.email = email;
         this.phonenum = phonenum;
     }
-
 
     public String getEmail() {
         return email;

@@ -40,6 +40,7 @@ public class Food implements Parcelable {
         this.food_name = food_name;
     }
 
+    //实现Parcelable接口，利用intent传输list列表数据
     public static final Creator<Food> CREATOR = new Creator<Food>() {
         @Override
         public Food createFromParcel(Parcel parcel) {

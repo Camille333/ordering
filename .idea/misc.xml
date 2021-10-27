@@ -6,16 +6,19 @@
         <entry key="..\:/ordering/app/src/main/res/drawable/ic_lock.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/drawable/ic_phone.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_business_info.xml" value="0.22" />
+        <entry key="..\:/ordering/app/src/main/res/layout/activity_finish.xml" value="0.16458333333333333" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_food_category.xml" value="0.17916666666666667" />
+        <entry key="..\:/ordering/app/src/main/res/layout/activity_info_store.xml" value="0.1453804347826087" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_login.xml" value="0.13333333333333333" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
-        <entry key="..\:/ordering/app/src/main/res/layout/activity_payment.xml" value="0.14666666666666667" />
+        <entry key="..\:/ordering/app/src/main/res/layout/activity_payment.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/layout/activity_select_food.xml" value="0.14666666666666667" />
-        <entry key="..\:/ordering/app/src/main/res/layout/activity_store.xml" value="0.14666666666666667" />
+        <entry key="..\:/ordering/app/src/main/res/layout/activity_store.xml" value="0.1" />
         <entry key="..\:/ordering/app/src/main/res/layout/bottom_sheet.xml" value="0.17916666666666667" />
         <entry key="..\:/ordering/app/src/main/res/layout/food_item.xml" value="0.22" />
         <entry key="..\:/ordering/app/src/main/res/layout/item_listview.xml" value="0.22" />
+        <entry key="..\:/ordering/app/src/main/res/layout/order_item.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>

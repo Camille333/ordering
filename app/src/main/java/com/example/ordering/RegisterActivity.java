@@ -36,10 +36,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         Button btn_register = findViewById(R.id.btn_rgs);
         ImageView iv_back = findViewById(R.id.iv_back);
-        /**
-         * 注册页面能点击的就三个地方
-         * top处返回箭头、刷新验证码图片、注册按钮
-         */
         iv_back.setOnClickListener(this);
         btn_register.setOnClickListener(this);
     }

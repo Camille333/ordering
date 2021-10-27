@@ -8,15 +8,15 @@
     android:orientation="vertical"
     android:padding="10dp"
     app:cardBackgroundColor="@null"
-    tools:context=".StoreActivity">
+    tools:context=".Info_StoreActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp"
+        android:layout_height="75dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/iv_back"
+            android:id="@+id/info_back"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
@@ -31,30 +31,34 @@
             app:srcCompat="@drawable/ic_back" />
 
         <TextView
-            android:id="@+id/hello"
-            android:layout_width="358dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/info_name"
+            android:layout_width="356dp"
+            android:layout_height="52dp"
             android:layout_marginTop="12dp"
+            android:paddingLeft="14dp"
             android:paddingTop="8dp"
-            android:text="@string/hello"
+            android:text="欢迎来到-美好面馆"
             android:textAlignment="viewStart"
-            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textSize="26sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/store"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:text="正在营业的商家"
+        android:id="@+id/info_addr"
+        android:layout_width="396dp"
+        android:layout_height="43dp"
+        android:text="地址："
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <ListView
-        android:id="@+id/listview"
-        android:background="@color/lightcyan"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
-
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="399dp"
+        android:layout_height="252dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="商家描述："
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
 </LinearLayout>

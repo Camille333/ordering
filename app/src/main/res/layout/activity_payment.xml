@@ -19,28 +19,55 @@
 
         <TextView
             android:id="@+id/storeName"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:gravity="center"
-            android:text="美味面馆"
+            android:text="美好面馆"
             android:textAlignment="center"
-            android:textSize="30dp"
             android:textColor="@color/black"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/selected_foodslist"
-            android:layout_width="91dp"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:text="已选菜品"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+        <LinearLayout
+            android:layout_width="359dp"
+            android:layout_height="43dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tag_name"
+                android:layout_width="138dp"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="已选食物"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tag_price"
+                android:layout_width="98dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="单价"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tag_count"
+                android:layout_width="19dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="数量"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/selected_foods"
-            android:layout_width="387dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -53,11 +80,14 @@
 
         <Button
             android:id="@+id/pay"
-            android:layout_width="match_parent"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginLeft="120dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_border"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"
             android:text="确定" />
-
 
     </LinearLayout>
 
