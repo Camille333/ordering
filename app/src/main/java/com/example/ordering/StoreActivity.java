@@ -5,8 +5,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Message;
@@ -62,9 +64,9 @@ public class StoreActivity extends AppCompatActivity implements AdapterView.OnIt
         //从数据库中取出store列表
         //store = mDBOpenHelper.getStoreData();
 
-        //获取用户数据
-        Intent intent = getIntent();
-        hello.setText(intent.getStringExtra("user_name") + " 欢迎来到吃好喝好");
+        //获取之前存储在sp中的用户数据
+        SharedPreferences sp = getSharedPreferences("myname", Activity.MODE_PRIVATE);
+        hello.setText(sp.getString("user_name", "user") + " 欢迎来到吃好喝好");
 
         adapter = new MyAdapter(StoreActivity.this, R.layout.item_listview, store);
         listView.setAdapter(adapter);

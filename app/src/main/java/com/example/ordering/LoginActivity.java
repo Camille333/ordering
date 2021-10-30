@@ -3,6 +3,7 @@ package com.example.ordering;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -119,7 +120,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     sleep(2000);//2秒 模拟登录时间
                                     String user_name = userName;
                                     Intent intent1 = new Intent(LoginActivity.this, StoreActivity.class);//设置自己跳转到成功的界面
-                                    intent1.putExtra("user_name", user_name);
+
+                                    //将获取的用户数据保存到sp中
+                                    SharedPreferences sp = getSharedPreferences("myname", Activity.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sp.edit();
+                                    editor.putString("user_name", user_name);
+                                    editor.commit();
+                                    //editor.apply();
+
                                     startActivity(intent1);
                                     finish();
                                 }catch (Exception e){
